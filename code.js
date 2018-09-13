@@ -10,9 +10,8 @@
 var imgFundo = new Image();
     imgFundo.src="img/fundo.png";
 
-var imgHeroi = new Image();
-    imgHeroi.src="img/heroi.png";
 
+// Redesenha a tela
  function AtualizaTela()
  {
  	
