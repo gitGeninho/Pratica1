@@ -14,5 +14,5 @@ var imgFundo = new Image();
 // Redesenha a tela
  function AtualizaTela()
  {
- 	
+    objContexto.drawImage(imgFundo,0,0);
  }
