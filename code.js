@@ -12,7 +12,15 @@ var imgFundo = new Image();
 
 
 // Redesenha a tela
- function AtualizaTela()
+function AtualizaTela()
  {
     objContexto.drawImage(imgFundo,0,0);
  }
+
+function Iniciar()
+ {
+    objCanvas = document.getElementById("meuCanvas");
+    objContexto = objCanvas.getContext("2d");
+
+    AtualizaTela();
+  }
