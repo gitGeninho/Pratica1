@@ -18,7 +18,7 @@ function AtualizaTela()
 // Inicializa variaveis
 function Iniciar()
  {
-    objCanvas = document.getElementById("meuCanvas");
+    objCanvas = document.getElementById("myCanvas");
     objContexto = objCanvas.getContext("2d");
 
     //var audio = new Audio('sons/musica.mpo3');
