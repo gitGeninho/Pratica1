@@ -3,8 +3,6 @@
         var objCanvas = null;
         var objContexto = null;
 
-//geninho vc é boboooooooooooo
-
 // Declação dos objetos para representar
 // as imagens
 var imgFundo = new Image();
