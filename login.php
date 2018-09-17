@@ -8,10 +8,10 @@
 	<h2 id="headerLogin">Login:</h2>
 	<div class="fields">
 		Login:</br>
-		 <input type="" name="">
+		 <input type="text" id="log">
 
 		Senha:</br>
-		 <input type="" name="">
+		 <input type="password" id="pass">
 	</div>
 </center>   
     

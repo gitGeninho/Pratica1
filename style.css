@@ -1,12 +1,48 @@
 body{
 	background-color: #212F3C;
-	color: #3498DB;
+/*	background-color: blue; */
+    background: linear-gradient(to right,lightblue,pink,cyan);
+	color: #154360;
 	font-family: bold;
 }
 
 canvas{
+	
    border:3px solid #3498DB;
    border-radius: 25px;
-   background-color: #154360;
+   background-color: #3498DB;
 
+}
+.header{
+	display: block;
+	background-color: #e09952;
+	position: center;
+	border-color: black;
+
+}
+
+#nav1 ul {
+	padding:0px;
+	margin:0px;
+	background-color: #3498DB;
+	list-style:none;
+}
+
+#nav1 ul li { display: inline; }
+
+#nav1 ul li a {
+	padding: 2px 10px;
+	display: inline-block;
+ 
+	/* visual do link */
+	background-color:#3498DB;
+	color: #333;
+	text-decoration: none;
+	border-bottom:3px solid  #52e0e0;
+}
+
+#nav1 ul li a:hover {
+	background-color: lightblue;
+	color: darkblue;
+	border-bottom:3px solid black;
 }
