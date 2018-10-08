@@ -13,7 +13,7 @@ canvas{
    background-color: #3498DB;
 
 }
-.header{
+/*.header{
 	display: block;
 	background-color: #e09952;
 	position: center;
@@ -35,7 +35,7 @@ canvas{
 	display: inline-block;
  
 	/* visual do link */
-	background-color:#3498DB;
+	/*background-color:#3498DB;
 	color: #333;
 	text-decoration: none;
 	border-bottom:3px solid  #52e0e0;
@@ -44,8 +44,8 @@ canvas{
 #nav1 ul li a:hover {
 	background-color: lightblue;
 	color: darkblue;
-	border-bottom:3px solid black;
-}
+	border-bottom:3px solid black;}*/
+
 #log{
 	display: block;
 	background-color: #3498DB;
