@@ -32,3 +32,6 @@ function Iniciar()
 
     AtualizaTela();
   }
+  function start(){
+    
+  }
