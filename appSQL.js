@@ -30,21 +30,21 @@ function execSQL(sql, resposta) {
 		.catch(erro => resposta.json(erro));
 }
 
-rota.get('/clientes', (requisicao, resposta) =>{
-execSQL('SELECT * FROM Clientes', resposta);
+rota.get('/Usuarios', (requisicao, resposta) =>{
+execSQL('SELECT * FROM Usuarios', resposta);
 })
 
 //o simbolo ? indica que id na rota abaixo é opcional
-rota.get('/clientes/:id?', (requisicao, resposta) => {
+rota.get('/Usuarios/:nick?', (requisicao, resposta) => {
 let filtro = '';
-if (requisicao.params.id)
-filtro = ' WHERE ID=' + parseInt(requisicao.params.id);
-execSQL('SELECT * from Clientes' + filtro, resposta);
+if (requisicao.params.nick)
+filtro = ' WHERE ID=' + parseInt(requisicao.params.nick);
+execSQL('SELECT * from Usuarios' + filtro, resposta);
 })
 
-rota.post('/clientes', (requisicao, resposta) =>{
-const id = parseInt(requisicao.body.id);
+rota.post('/Usuarios', (requisicao, resposta) =>{
+const nick = parseInt(requisicao.body.nick);
 const nome = requisicao.body.nome.substring(0,150);
 const cpf = requisicao.body.cpf.substring(0,11);
-execSQL(`INSERT INTO Clientes(ID, Nome, CPF) VALUES(${id},'${nome}','${cpf}')`, resposta);
+execSQL(`INSERT INTO Usuarios(nick, Nome, senha) VALUES(${nick},'${nome}','${cpf}')`, resposta);
 })

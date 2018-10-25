@@ -49,6 +49,19 @@ img.avatar {
 .container {
     padding: 16px;
 }
+
+#log{
+
+    display: block;
+    background-color: #3498DB;
+    height: 570px;
+    width: 400px;
+
+    border:3px solid #3498DB;
+    border-radius: 25px;
+    
+}
+
 #log2{
 
     display: block;
