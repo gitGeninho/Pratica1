@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -30,21 +31,25 @@ function execSQL(sql, resposta) {
 		.catch(erro => resposta.json(erro));
 }
 
-rota.get('/Usuarios', (requisicao, resposta) =>{
-execSQL('SELECT * FROM Usuarios', resposta);
+rota.get('/Usuario', (requisicao, resposta) =>{
+execSQL('SELECT * FROM Usuario', resposta);
 })
 
 //o simbolo ? indica que id na rota abaixo é opcional
-rota.get('/Usuarios/:nick?', (requisicao, resposta) => {
+rota.get('/Usuario/:nick?', (requisicao, resposta) => {
 let filtro = '';
 if (requisicao.params.nick)
-filtro = ' WHERE ID=' + parseInt(requisicao.params.nick);
-execSQL('SELECT * from Usuarios' + filtro, resposta);
+filtro = " WHERE nick='" + requisicao.params.nick + "'";
+
+execSQL('SELECT * from Usuario' + filtro, resposta);
 })
 
-rota.post('/Usuarios', (requisicao, resposta) =>{
-const nick = parseInt(requisicao.body.nick);
-const nome = requisicao.body.nome.substring(0,150);
-const cpf = requisicao.body.cpf.substring(0,11);
-execSQL(`INSERT INTO Usuarios(nick, Nome, senha) VALUES(${nick},'${nome}','${cpf}')`, resposta);
+rota.post('/Usuario', (requisicao, resposta) =>{
+	debugger;
+const nick = requisicao.body.nick.substring(0, 20);
+const nome = requisicao.body.nome.substring(0,50);
+const senha = requisicao.body.senha.substring(0,100);
+const numAula = parseInt(requisicao.body.numAula);
+
+execSQL(`INSERT INTO Usuario(nick, nome, senha, numAula) VALUES('${nick}','${nome}','${senha}',${numAula})`, resposta);
 })
