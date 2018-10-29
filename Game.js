@@ -5,19 +5,22 @@
 // Declação dos objetos para representar
 // as imagens
 
-/*var imgFundo = new Image();
-    imgFundo.src="img/fundo.png";*/
+var imgFundo = new Image();
+    imgFundo.src="img/fundo.png";
 
 var imgPers = new Image();
-    imgPers.src="img/bytechan.png";
+    imgPers.src = "img/bytechan.png";
+
+var imgBtnPlay = new Image();
+    imgBtnPlay.src = "img/btnPlay.png";
 
 
 
 // Redesenha a tela
 function AtualizaTela()
  {
-   // objContexto.drawImage(imgFundo,0,0);
-    objContexto.drawImage(imgPers,690,430);
+    //objContexto.drawImage(imgFundo,0,0);
+    objContexto.drawImage(imgBtnPlay,100,100);
  }
 
 // Inicializa variaveis
