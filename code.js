@@ -5,7 +5,7 @@ e.preventDefault();
 	var nick = document.getElementById('nick').value;
 	var nome = document.getElementById('nome').value;
 	var senha = document.getElementById('pass').value;
-	var senhaRepetir = document.getElementById('passe').value;
+	var senhaRepetir = document.getElementById('passe').value;aaaaaa
 
 	if (senha != senhaRepetir)
 	{
