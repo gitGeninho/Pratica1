@@ -1,6 +1,14 @@
 // Declaração das variáveis globais
-        var objCanvas = null;
-        var objContexto = null;
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+
+    var width = canvas.getAttribute('width');
+    var height = canvas.getAttribute('height');
+    
+    var mouseX;
+    var mouseY;
+    
+
 
 // Declação dos objetos para representar
 // as imagens
@@ -25,9 +33,7 @@ function Menu()
 // Inicializa variaveis
 function Iniciar()
  {
-    objCanvas = document.getElementById("myCanvas");
-    objContexto = objCanvas.getContext("2d");
-
+    
     //var audio = new Audio('sons/musica.mpo3');
 	//audio.play();
 
