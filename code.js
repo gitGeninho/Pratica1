@@ -5,7 +5,7 @@ e.preventDefault();
 	var nick = document.getElementById('nick').value;
 	var nome = document.getElementById('nome').value;
 	var senha = document.getElementById('pass').value;
-	var senhaRepetir = document.getElementById('passe').value;aaaaaa
+	var senhaRepetir = document.getElementById('passe').value;
 
 	if (senha != senhaRepetir)
 	{
@@ -15,6 +15,16 @@ e.preventDefault();
 
 	return true;
 	//inserirBD(nick, nome, senha, 1)
+}
+function btnCancelaClick(){
+			nick = document.getElementById("nick");
+			nome = document.getElementById("nome");
+			senha = document.getElementById("pass");
+			repetesenha = document.getElementById("passe");
+			nick.value = "";
+			nome.value = "";
+			senha.value = "";
+			repetesenha.value = "";
 }
 /*
 function inserirBD(nick, nome, senha, codAula)
