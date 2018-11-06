@@ -1,7 +1,7 @@
 // Declaração das variáveis globais
 var pontos = 0;
 var bloco;
-var gameSpeed = 7;
+var gameSpeed = 20;
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
@@ -54,7 +54,7 @@ function component(width, height, color, x, y) {
 // Redesenha a tela
 function Menu()
  {
-     //objContexto.drawImage(imgFundo,0,0);
+    // canvas.Context.drawImage(imgBtnPlay,0,0);
 
  }
 
@@ -64,7 +64,7 @@ function Iniciar()
     myGameArea.start();
     bloco = new component(30, 30, "red", 00, 300);
     
-   // Menu();
+  //  Menu();
   }
 
 function clicarSpace(event){
