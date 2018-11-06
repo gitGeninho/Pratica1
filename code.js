@@ -16,6 +16,7 @@ e.preventDefault();
 	return true;
 	//inserirBD(nick, nome, senha, 1)
 }
+
 function btnCancelaClick(){
 			nick = document.getElementById("nick");
 			nome = document.getElementById("nome");

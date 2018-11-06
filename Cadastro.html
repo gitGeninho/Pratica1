@@ -16,7 +16,7 @@
 <div class="fields" id="log2">
 
 
-	<form action="http://localhost:3000/Usuario" method="post" onsubmit="cadastrar(event)" style="border: none;">
+	<form action="http://localhost:3000/Usuario" method="post" style="border: none;">
       <div class="imgcontainer">
        <img src="img/avatar.png" alt="Avatar" class="avatar">
       </div>
@@ -35,7 +35,7 @@
 		Repita a Senha:</br>
 		 <input type="password" id="passe"><br>
 
-		 <button onclick="">Cadastrar</button>
+		 <input type="submit" name="submit" onclick="cadastrar()" value="Enviar">
 <br><p>
 		 <input type="button" id="cancelbtn" onclick="btnCancelaClick()" value="Cancelar">
 <br>
