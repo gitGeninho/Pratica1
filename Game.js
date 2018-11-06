@@ -1,7 +1,7 @@
 // Declaração das variáveis globais
 var pontos = 0;
 var bloco;
-var gameSpeed = 20;
+var gameSpeed = 10;
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
