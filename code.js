@@ -10,6 +10,8 @@ e.preventDefault();
 	if (senha != senhaRepetir)
 	{
 		alert('As senhas não correspondem!');
+		senha = "";
+		senhaRepetir = "";
 		return false;
 	}
 
