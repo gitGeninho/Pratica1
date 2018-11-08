@@ -1,4 +1,13 @@
-﻿function cadastrar(e)
+﻿var nomeUsuario = '';
+
+$(document).ready(function (){
+	if (nomeUsuario=='')
+		$("#btnLogar").innerHTML = "Sign in";
+	else
+		$("#btnLogar").innerHTML = "Sign out";
+});
+
+function cadastrar(e)
 {
 e.preventDefault();
 
