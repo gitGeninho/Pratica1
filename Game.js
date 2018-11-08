@@ -52,17 +52,16 @@ function component(width, height, color, x, y) {
 }
 
 // Redesenha a tela
-function Menu()
- {
-    // canvas.Context.drawImage(imgBtnPlay,0,0);
-
- }
-
 // Inicializa variaveis
 function Iniciar()
  {
     myGameArea.start();
     bloco = new component(30, 30, "red", 00, 300);
+    
+    context.beginPath();
+    context.moveTo(100, 150);
+    context.lineTo(450, 50);
+    context.stroke();
     
   //  Menu();
   }
@@ -71,7 +70,7 @@ function clicarSpace(event){
     var tecla = event.keyCode; 
     alert(bloco.x);
     if(tecla == 32){
-        if(bloco.x > 650 && bloco.x < 750){
+        if(bloco.x >= 650 && bloco.x <= 750){
             bloco.x = 0;
             pontos += 50;
             document.getElementById("pontos").innerHTML = pontos;

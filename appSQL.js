@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const porta = 3000; //porta padrão
 const sql = require('mssql');
+const cors = require('cors');
 const conexaoStr = "Server=regulus;Database=PR117015;User Id=PR117015;Password=PR117015;";
 
 //conexao com BD
@@ -11,6 +12,7 @@ sql.connect(conexaoStr)
    .then(conexao => global.conexao = conexao)
    .catch(erro => console.log(erro));
 
+app.use(cors());
 // configurando o body parser para pegar POSTS mais tarde
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
