@@ -15,6 +15,11 @@ e.preventDefault();
 		return false;
 	}
 
+	$.post( "http://localhost:3000/Usuario", { nick: nick, nome: nome, senha: senha})
+  .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  });
+
 	return true;
 	//inserirBD(nick, nome, senha, 1)
 }
