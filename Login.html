@@ -7,17 +7,19 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="login.css">
 	<link rel="icon" href="img/bytechan.png">
+	<script type="text/javascript" src="Jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="code.js"></script>
-	<script type="text/javascript" src="appSQL.js">
+	<script type="text/javascript">
 
 	function verificaLogin(){
+		/*
 		var xmlhttp = new XMLHttpRequest();
 		var url = "http://localhost:3000/Usuario";
 		xmlhttp.onreadystatechange=function() {
-		if (this.readyState == 4 && this.status == 200) {
-		//quando os dados retornarem da requisição serão enviados para a função ExibeDados()
-		VerificaDados(this.responseText);
-		}
+			if (this.readyState == 4 && this.status == 200) {
+				//quando os dados retornarem da requisição serão enviados para a função ExibeDados()
+				VerificaDados(this.responseText);
+			}
 		}
 		xmlhttp.open("GET", url, true);
 		xmlhttp.send();
@@ -32,13 +34,29 @@
 				}
 			}
 		}
+		*/
+
+		var nickPego = $('#nick').val();
+		var senhaPega = $('#pass').val();
+
+		const url = 'http://localhost:3000/Usuario/login';
+		const data={
+			nick: nickPego,
+			senha: senhaPega
+		}
+
+		$.post(url, data, function(data, status){
+			debugger;
+			console.log('data: ' + data.nick + ' status: ' + status);
+		})
+
 	}
 
 	</script>
 </head>
 <body>
 <center>
-	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br>
 <div class="fields" id="log">
 
 	<form action="/action_page.php" style="border: none;">
@@ -56,7 +74,7 @@
 
 
 
-		 <input type="button" id="entrar" onclick="verificaLogin()" value="Entrar">
+		 <input type="button" id="entrar" onclick="verificaLogin();" value="Entrar">
 <br><br>
 		 <input type="button" id="cancelbtn" onclick="" value="Cancelar">
 <br><br>
