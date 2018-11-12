@@ -56,7 +56,6 @@ function inserirBD(nick, nome, senha, codAula)
 }
 */
 function logar() {
-  alert("AAAAAAAAA");
  //window.location.replace("Login.html");
 
  var win = window.open("Login.html", '_blank');
