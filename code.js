@@ -12,6 +12,60 @@ function clicaLogin(){
 	nick.value = "";
 }
 
+
+	function verificaLogin(){
+		/*
+		var xmlhttp = new XMLHttpRequest();
+		var url = "http://localhost:3000/Usuario";
+		xmlhttp.onreadystatechange=function() {
+			if (this.readyState == 4 && this.status == 200) {
+				//quando os dados retornarem da requisição serão enviados para a função ExibeDados()
+				VerificaDados(this.responseText);
+			}
+		}
+		xmlhttp.open("GET", url, true);
+		xmlhttp.send();
+
+		function VerificaDados(response){
+			var arr = JSON.parse(response);
+			var login = document.getElementById("nick").innerHTML;
+			var senha = document.getElementById("pass").innerHTML;
+			for(var i=0, i<arr.length; i++){
+				if (arr[i].nick == login && arr[i].senha == senha) {
+					alert("Login feito com sucesso");
+				}
+			}
+		}
+		*/
+		/*
+		var nickPego = $('#nick').val();
+		var senhaPega = $('#pass').val();
+
+		const url = 'http://localhost:3000/Usuario/login';
+		const data={
+			nick: nickPego,
+			senha: senhaPega
+		}
+
+		$.post(url, data, function(data, status){
+			debugger;
+			console.log('data: ' + data.nick + ' status: ' + status);
+		})
+		*/
+		/*
+		var nick = document.getElementById('nick').value;
+		var senha = document.getElementById('pass').value;
+
+		if($.get("http://localhost:3000/Usuario", {nick: nick, senha: senha})){
+		.done(function (data){
+   			alert("Login Realizado");
+		});
+		window.location.href = "Menu.html";
+		return true;
+		*/
+	}
+
+
 function cadastrar(e)
 {
 e.preventDefault();
