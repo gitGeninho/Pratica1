@@ -62,11 +62,13 @@ function component(width, height, color, x, y) {
 // Inicializa variaveis
 function Iniciar()
  {   
-    text();
+    
 
     myGameArea.start();
+
+    text();
+
     bloco = new component(30, 30, "red", 00, 300);
-    
     context.beginPath();
     context.moveTo(100, 150);
     context.lineTo(450, 50);
