@@ -7,6 +7,11 @@ $(document).ready(function (){
 		$("#btnLogar").innerHTML = "Sign out";
 });
 
+function clicaLogin(){
+	nick = document.getElementById("nick");
+	nick.value = "";
+}
+
 function cadastrar(e)
 {
 e.preventDefault();
@@ -19,8 +24,8 @@ e.preventDefault();
 	if (senha != senhaRepetir)
 	{
 		alert('As senhas não correspondem!');
-		senha = "";
-		senhaRepetir = "";
+		senha.value = "";
+		senhaRepetir.value = "";
 		return false;
 	}
 
@@ -28,6 +33,7 @@ e.preventDefault();
   .done(function( data ) {
     alert( "Data Loaded: " + data );
   });
+  window.location.href = "Menu.html";
 
 	return true;
 	//inserirBD(nick, nome, senha, 1)
