@@ -14,12 +14,17 @@ function clicaLogin(){
 
 function cadastrar(e)
 {
+	
 e.preventDefault();
 
 	var nick = document.getElementById('nick').value;
 	var nome = document.getElementById('nome').value;
 	var senha = document.getElementById('pass').value;
 	var senhaRepetir = document.getElementById('passe').value;
+
+	if ((nick == '') || (nome == '') || (senha == '')) {
+		alert("Existem campos vazios!")
+	}
 
 	if (senha != senhaRepetir)
 	{
@@ -33,7 +38,6 @@ e.preventDefault();
   .done(function( data ) {
     alert( "Cadastro feito com sucesso");
   });
-  alert("Cadastro realizado com sucesso!");
   window.location.href = "Menu.html";
 
 	return true;
