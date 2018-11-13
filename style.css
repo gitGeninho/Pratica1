@@ -119,6 +119,31 @@ img.avatar {
 }
 */
 
-.divMenu{
+#divMenu{
+
+}
+
+.btnPlay{
+    background-color: #3498DB;  
+     border:5px solid #3498DB; 
+     height: 100px;
+     border-radius: 25px;
     
+
+      color: white;
+      font-size: 30px;
+      padding: 14px 20px;
+      margin: 8px 0;
+   
+   cursor: pointer;
+    
+
+}
+
+.btnPlay:hover{
+    opacity: 0.8;
+}
+#btnCampanha:hover{
+    background-color: red;
+    border:red;
 }

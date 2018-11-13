@@ -68,4 +68,13 @@ function logar() {
   win.focus();
 
 }
- //----------------------------------------- JOGO 
+ //----------------------------------------- Demais
+
+ function aindaNao() {
+ 	alert("Ainda estamos preparando!!\n aguarde =v=");
+ }
+
+ function jogar() {
+ 	 var win = window.open("Main.html", '_blank');
+     win.focus();
+ }
