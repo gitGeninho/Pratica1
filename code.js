@@ -31,8 +31,9 @@ e.preventDefault();
 
 	$.post( "http://localhost:3000/Usuario", { nick: nick, nome: nome, senha: senha})
   .done(function( data ) {
-    alert( "Data Loaded: " + data );
+    alert( "Cadastro feito com sucesso");
   });
+  alert("Cadastro realizado com sucesso!");
   window.location.href = "Menu.html";
 
 	return true;
