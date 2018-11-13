@@ -23,6 +23,13 @@ function updateGameArea() {
     bloco.update();
 }
 
+function text() {
+  var canvas = document.getElementById("canvas");
+  var ctx = this.context;
+  ctx.font() = '30px Arial';
+  ctx.fillText("Hello World",10,50);
+}
+
 // Declação dos objetos para representar
 // as imagens e audios
 
@@ -54,7 +61,9 @@ function component(width, height, color, x, y) {
 // Redesenha a tela
 // Inicializa variaveis
 function Iniciar()
- {
+ {   
+    text();
+
     myGameArea.start();
     bloco = new component(30, 30, "red", 00, 300);
     
