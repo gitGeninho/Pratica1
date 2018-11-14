@@ -37,7 +37,7 @@ function clicaLogin(){
 			}
 		}
 		*/
-		/*
+		
 		var nickPego = $('#nick').val();
 		var senhaPega = $('#pass').val();
 
@@ -51,7 +51,7 @@ function clicaLogin(){
 			debugger;
 			console.log('data: ' + data.nick + ' status: ' + status);
 		})
-		*/
+		
 		/*
 		var nick = document.getElementById('nick').value;
 		var senha = document.getElementById('pass').value;
