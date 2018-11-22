@@ -24,7 +24,6 @@ function updateGameArea() {
 }
 
 function text() {
-  var canvas = document.getElementById("canvas");
   var ctx = this.context;
   ctx.font() = '30px Arial';
   ctx.fillText("Hello World",10,50);
@@ -66,8 +65,7 @@ function Iniciar()
 
     myGameArea.start();
 
-    text();
-
+    barra = new component(50, 850,"lightgray", 650, 00);
     bloco = new component(30, 30, "red", 00, 300);
     context.beginPath();
     context.moveTo(100, 150);

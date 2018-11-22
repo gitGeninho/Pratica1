@@ -147,3 +147,15 @@ img.avatar {
     background-color: red;
     border:red;
 }
+#divAula{
+	background-color: white;
+	display: block;
+    height:85%;
+    width: 70%;
+    position: absolute;;
+    left: 13%;
+    top:10%;
+
+    border:3px solid #3498DB;
+    border-radius: 25px;
+}
