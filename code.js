@@ -13,7 +13,7 @@ function clicaLogin(){
 }
 
 
-function verificaLogin(){
+function Login(){
 		
 		
 		var nickPego = document.getElementById('nick').value;
@@ -83,18 +83,7 @@ function btnCancelaClick(){
 }
 
 
-/*
-function inserirBD(nick, nome, senha, codAula)
-{
-	debugger;
-	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-	xmlhttp.open("POST", "http://localhost:3000/Usuario");
-	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	xmlhttp.send({ "nick": nick, 'nome': nome, 'senha':senha, 'codAula':1 } );
 
-  alert('inserido!!!!!!')
-}
-*/
 function logar() {
  //window.location.replace("Login.html");
 
