@@ -1,6 +1,7 @@
 // Declaração das variáveis globais
 var pontos = 0;
 var bloco;
+var barra;
 var gameSpeed = 10;
 
 var myGameArea = {
@@ -21,12 +22,14 @@ var myGameArea = {
 function updateGameArea() {
     myGameArea.clear();
     bloco.update();
+    barra.update();
 }
 
 function text() {
+ /* var canvas = document.getElementById("canvas");
   var ctx = this.context;
   ctx.font() = '30px Arial';
-  ctx.fillText("Hello World",10,50);
+  ctx.fillText("Hello World",10,50);*/
 }
 
 // Declação dos objetos para representar
