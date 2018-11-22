@@ -38,19 +38,30 @@ function clicaLogin(){
 		}
 		*/
 		
-		var nickPego = $('#nick').val();
-		var senhaPega = $('#pass').val();
+		var nickPego = document.getElementById('nick').value;
+		var senhaPega = document.getElementById('pass').value;
 
-		const url = 'http://localhost:3000/Usuario/login';
 		const data={
 			nick: nickPego,
 			senha: senhaPega
 		}
 
-		$.post(url, data, function(data, status){
-			debugger;
-			console.log('data: ' + data.nick + ' status: ' + status);
-		})
+		$.get( "http://localhost:3000/Usuario", { nick: nickPego, senha: senhaPega})
+  			.done(function( data ) {
+   			 alert( "Login feito com sucesso");
+   			 window.location.href = "Menu.html";
+ 		 });
+
+		/*$(document).ready(function(){
+    		$("button").click(function(){
+
+       			 $.get(url, function(data, status){	
+
+          			  alert("Data: " + data[0].senha + "\nStatus: " + status);
+        		});
+    		});
+		});
+		*/
 		
 		/*
 		var nick = document.getElementById('nick').value;
