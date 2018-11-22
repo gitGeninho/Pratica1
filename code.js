@@ -82,9 +82,7 @@ function btnCancelaClick(){
 			repetesenha.value = "";
 }
 
-function sobreNos(){
-	window.location.href = "Sobre_nós.html";
-}
+
 /*
 function inserirBD(nick, nome, senha, codAula)
 {
