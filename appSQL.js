@@ -61,6 +61,7 @@ const nick = requisicao.body.nick.substring(0, 20);
 const nome = requisicao.body.nome.substring(0,50);
 const senha = requisicao.body.senha.substring(0,100);
 const numAula = 1;
+}
 
 execSQL(`INSERT INTO Usuario(nick, nome, senha, numAula) VALUES('${nick}','${nome}','${senha}',${numAula})`, resposta);
 })

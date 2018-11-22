@@ -29,11 +29,32 @@ function Login(){
 		return false;
 		}
 
+
+
+  				let pode = true;
+
+		$.get(`http://localhost:3000/Usuario/${nickPego}`, {})
+  .done(function( data ) { 
+
+  	if (data.length == 0) {
+  		pode = false;
+  	}
+
+		if (pode) {
+
 		$.get( "http://localhost:3000/Usuario", { nick: nickPego, senha: senhaPega})
-  			.done(function( data ) {
+  			.always(function( data ) {
    			 alert( "Login feito com sucesso");
    			 window.location.href = "Menu.html";
  		 });
+
+
+
+
+
+} else {
+	alert("Usuário inválido.");
+}});
 
 }
 
@@ -61,11 +82,32 @@ e.preventDefault();
 		return false;
 	}
 
-	$.post( "http://localhost:3000/Usuario", { nick: nick, nome: nome, senha: senha})
-  .done(function( data ) {
+	let pode = true;
+
+		$.get(`http://localhost:3000/Usuario/${nick}`, {})
+  .done(function( data ) { 
+    if (data.length > 0 ) {
+	pode = false;
+}
+		if (pode) {
+
+		console.log({ nick: nick, nome: nome, senha: senha})
+
+		$.post( "http://localhost:3000/Usuario", { nick: nick, nome: nome, senha: senha})
+  .always(function( data ) {
+  	console.log('chegou aqui');
     alert( "Cadastro feito com sucesso");
+   	window.location.href = "Menu.html";
+   	return false;
   });
-  window.location.href = "Menu.html";
+
+
+
+
+
+} else {
+	alert("Usuário já cadastrado.");
+}});
 
 	return true;
 	//inserirBD(nick, nome, senha, 1)
