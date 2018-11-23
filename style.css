@@ -3,7 +3,8 @@ body{
 	background-color: #212F3C;
 /*	background-color: blue; */
     background: linear-gradient(to right,lightblue,pink,cyan);
-	color: #154360;
+	color: blue;
+  font-size: 20px;
 }
 
 html{
