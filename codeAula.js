@@ -1,6 +1,22 @@
+var indice = 0;
 $(document).ready(function (){
 	criarDivAula();
 });
+	
+
+function Proximo() {
+	indice++;
+	document.getElementById("audio").pause();
+	criarDivAula();
+}
+
+
+function Anterior() {
+	indice--;
+	document.getElementById("audio").pause();
+	criarDivAula();
+}
+
 function iniciaAjax()
 {
 	var objetoAJAX;
@@ -18,21 +34,22 @@ function iniciaAjax()
 
 }
 
+
 function criarDivAula()
 {
     var ajax = iniciaAjax();
 
     var url = "http://localhost:3000/Aula";
-    var indice = 1;
+    
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) 
-		    adicionaInformacoes(this.responseText, indice);
+		    adicionaInformacoes(this.responseText);
 	}
 	ajax.open("GET", url, true)
 	ajax.send();
 }
 
-function adicionaInformacoes(responseText, indice)
+function adicionaInformacoes(responseText)
 {
 	var arr = JSON.parse(responseText);
 	var div = document.createElement("div");
@@ -40,14 +57,15 @@ function adicionaInformacoes(responseText, indice)
 
 	var musica = arr[indice].musica;
 	var aula = arr[indice].textoAula;
-	alert(musica);
-	alert(aula);
 
-	var out = "<h1>"+musica+"</h1><br><p>"+aula+"</p>"
+	var out = "<h1>"+musica+"</h1><br><p>"+aula+"</p><audio id = 'audio' controls><source src='Musicas/"+ indice + ".mp3' type='audio/mpeg'></source></audio>"
 
 	div.innerHTML = out;
 						
 	document.getElementById("pag").appendChild(div);
+}
 
-	}
+
+
+
 
