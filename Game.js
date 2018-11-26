@@ -1,15 +1,29 @@
 // Declaração das variáveis globais
 var pontos = 0;
-var bloco;
+var ponto = 10;
+
+var dificuldade = 3;
+
 var barra;
+
 var gameSpeed = 10;
+
 var audio = new Audio('campainha_escola.mp3');
+
+var increment = 0;
+var x = 0;
+
+var interval;
+
+var music = [2, 5, 1, 1, 6, 8, 9, 10, 11];
+var blocos = [];
+var cores = ["red", "blue", "yellow", "red", "blue", "yellow", "red", "blue", "yellow"];
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
         this.canvas.width = 800;
-        this.canvas.height = 600;
+        this.canvas.height = 500;
         this.context = this.canvas.getContext("2d");
        $("#game").append(this.canvas);
         this.interval = setInterval(updateGameArea, 20);
@@ -23,121 +37,96 @@ var myGameArea = {
 function updateGameArea() {
     myGameArea.clear();
     barra.update();
-    bloco.update();
-    if(bloco.x==600)
-        audio.play();
-    bloco2.update();
+
+    for(var i = 0; i < blocos.length - 1; i++){
+        if(blocos[i] != null)
+            blocos[i].update();
+    }
+
+    increment += gameSpeed;
+    if(increment > music[x] * 100 / dificuldade){
+        console.log(x);
+        blocos[x].start();
+        increment = 0;
+        x++;
+        if(x == music.length)
+            x = 0;
+    }
 }
-
-function text() {
- /* var canvas = document.getElementById("canvas");
-  var ctx = this.context;
-  ctx.font() = '30px Arial';
-  ctx.fillText("Hello World",10,50);*/
-}
-
-// Declação dos objetos para representar
-// as imagens e audios
-
-var imgBtnPlay = new Image();
-    imgBtnPlay.src = "img/btnPlay.png";
-var imgBtnPause = new Image();
-    imgBtnPause.src = 'img/btnPause.png';
-
-    //var audio = new Audio('sons/musica.mpo3');
-    //audio.play();
 
 
 function component(width, height, color, x, y, speed) {
     this.width = width;
     this.height = height;
+    this.color = color;
+    this.originalColor = color;
     this.x = x;
-    this.y = y; 
+    this.y = y;
+    this.foi = false;
+    this.pontuou = false;
+    this.morrer = 0;
     ctx = myGameArea.context;
-    ctx.fillStyle = color;
+    ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height, this.movel);
+    this.start = function(){
+        this.foi = true;
+    }
     this.update = function(){
-        
-        this.x += speed;   
+        if(this.foi)
+            this.x += speed;   
         ctx = myGameArea.context;
-        ctx.fillStyle = color;
+        ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
+        if(this.x >= 800){
+           this.kill(); 
+        } 
+        if(this.pontuou){
+            this.color = "green";
+            ctx.fillStyle = this.color;
+            this.morrer++;
+        }
+        if(this.morrer == 10)
+            this.kill();
+    }
+    this.kill = function(){
+        this.x = -50;
+        this.y = Math.floor(Math.random() * 600 + 1);
+        this.foi = false;
+        this.pontuou = false;
+        this.morrer = 0;
+        this.color = this.originalColor;
+    }
+    this.point = function(){
+        this.pontuou = true;
     }
 }
 
-function Timer() {
-    
-    setInterval(function(){ alert("Hello"); }, 3000);
-}
-
 // Redesenha a tela
+// Inicializa variaveis
 function Iniciar()
  {   
-    
-
     myGameArea.start();
 
-    barra  = new component(50, 850,"lightgray", 650, 00, 0);
-    bloco  = new component(30, 30, "red", 00, 300, gameSpeed);
-    bloco2 = new component(30, 30, "red",-50, 50, gameSpeed/3)
+    barra  = new component(100, 850,"lightgray", 650, 00, 0);
+
+    for(var i = 0; i < music.length; i++)
+        blocos[i] = new component(30, 30, cores[i], -50, Math.floor(Math.random() * 600 + 1 ), gameSpeed);
   }
 
 function clicarSpace(event){
-    var tecla = event.keyCode; 
-    alert(bloco.x);
-    if(tecla == 32)
-    {
-        
-        if(bloco.x>750)
-        {
-            bloco.x=0;
-            pontos -= 30;
-            document.getElementById("pontos").innerHTML = pontos;
-        }    
-            
-        
-        if(bloco2.x>750)
-        {
-            bloco2=0;
-            pontos -= 30;
-            document.getElementById("pontos").innerHTML = pontos;
-        }
-
-
-        if(bloco.x>bloco2.x)
-        {
-            if((bloco.x >= 650 && bloco.x <= 700))
-            {
-                bloco.x  = 0;
-                pontos += 50;
-                document.getElementById("pontos").innerHTML = pontos;            
+    if(event.keyCode == 32){
+        var foi = false;
+        for(var i = 0; i < blocos.length; i++){
+            if(blocos[i].x >= 650 && blocos[i].x <= 750){
+                blocos[i].point();
+                pontos += ponto;
+                $("#pontos")[0].innerHTML = pontos;
+                foi = true;
             }
-            else
-            {
-                bloco.x  = 0;
-                pontos -= 30;
-                document.getElementById("pontos").innerHTML = pontos;
-            }
-            return;
         }
-    
-
-        if((bloco2.x >= 650 && bloco2.x <= 700))
-        {
-        bloco2.x  = 0;
-        pontos += 50;
-        document.getElementById("pontos").innerHTML = pontos;
-        
+        if(!foi){
+            pontos -= ponto;
+            $("#pontos")[0].innerHTML = pontos;
         }
-        else{
-            bloco2.x  = 0; 
-            pontos -= 30;
-            document.getElementById("pontos").innerHTML = pontos;
-        }            
-      
-        
-
-    }   
-        
-    
+    }
 }
