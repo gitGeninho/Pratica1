@@ -137,6 +137,7 @@ function logar() {
 
  function aindaNao() {
  	alert("Ainda estamos preparando!!\n aguarde =v=");
+ 	//window.location.href = "Aula.html";
  }
 
  function jogar() {
