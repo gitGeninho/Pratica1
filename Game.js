@@ -54,17 +54,19 @@ function component(width, height, color, x, y) {
 // Redesenha a tela
 function Menu()
  {
-    // canvas.Context.drawImage(imgBtnPlay,0,0);
-
+ //  ctx.drawImage(imgBtnPlay,0,0);
+//
  }
 
 // Inicializa variaveis
 function Iniciar()
- {
+ {  
+
     myGameArea.start();
-    bloco = new component(30, 30, "red", 00, 300);
+    //Menu();
+    bloco = new component(30, 30, "salmon", 00, 300);
     
-  //  Menu();
+
   }
 
 function clicarSpace(event){
