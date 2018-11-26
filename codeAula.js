@@ -22,11 +22,11 @@ function criarDivAula()
 {
     var ajax = iniciaAjax();
 
-    var url = ""
-
+    var url = "http://localhost:3000/Aula";
+    var indice = 1;
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) 
-		    adicionaInformacoes(this.responseText);
+		    adicionaInformacoes(this.responseText, indice);
 	}
 	ajax.open("GET", url, true)
 	ajax.send();
@@ -34,14 +34,16 @@ function criarDivAula()
 
 function adicionaInformacoes(responseText, indice)
 {
-	var arr = JSON.parse();
+	var arr = JSON.parse(responseText);
 	var div = document.createElement("div");
 	div.id = "divAula";
 
-	var indice = arr[indice].indAula;
-	var aula = arr[indice].aula;
+	var musica = arr[indice].musica;
+	var aula = arr[indice].textoAula;
+	alert(musica);
+	alert(aula);
 
-	var out = "<p>"+aula+"</p>"
+	var out = "<h1>"+musica+"</h1><br><p>"+aula+"</p>"
 
 	div.innerHTML = out;
 						
@@ -49,4 +51,3 @@ function adicionaInformacoes(responseText, indice)
 
 	}
 
-}

@@ -65,23 +65,12 @@ function component(width, height, color, x, y, speed) {
     }
 }
 
+function Timer() {
+    
+    setInterval(function(){ alert("Hello"); }, 3000);
+}
+
 // Redesenha a tela
-<<<<<<< HEAD
-function Menu()
- {
- //  ctx.drawImage(imgBtnPlay,0,0);
-//
- }
-
-// Inicializa variaveis
-function Iniciar()
- {  
-
-    myGameArea.start();
-    //Menu();
-    bloco = new component(30, 30, "salmon", 00, 300);
-=======
-// Inicializa variaveis
 function Iniciar()
  {   
     
@@ -91,13 +80,6 @@ function Iniciar()
     barra  = new component(50, 850,"lightgray", 650, 00, 0);
     bloco  = new component(30, 30, "red", 00, 300, gameSpeed);
     bloco2 = new component(30, 30, "red",-50, 50, gameSpeed/3)
-   /* context.beginPath();
-    context.moveTo(100, 150);
-    context.lineTo(450, 50);
-    context.stroke();*/
->>>>>>> 1ac195ca84676b269cc6b443e419606f82edc76f
-    
-
   }
 
 function clicarSpace(event){
