@@ -2,18 +2,18 @@ var indice = 0;
 $(document).ready(function (){
 	criarDivAula();
 });
-	
 
 function Proximo() {
 	indice++;
-	document.getElementById("audio").pause();
+
+	document.getElementById("audio").remove();
 	criarDivAula();
 }
 
 
 function Anterior() {
 	indice--;
-	document.getElementById("audio").pause();
+	document.getElementById("audio").remove();
 	criarDivAula();
 }
 
