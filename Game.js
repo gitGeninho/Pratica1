@@ -8,14 +8,14 @@ var barra;
 
 var gameSpeed = 10;
 
-var audio = new Audio('campainha_escola.mp3');
+var audio = new Audio('musica.mp3');
 
 var increment = 0;
 var x = 0;
 
 var interval;
 
-var music = [2, 5, 1, 1, 6, 8, 9, 10, 11];
+var music = [2, 5, 1, 2, 6, 8, 5, 10, 5];
 var blocos = [];
 var cores = ["red", "blue", "yellow", "red", "blue", "yellow", "red", "blue", "yellow"];
 
